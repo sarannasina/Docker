@@ -1,54 +1,101 @@
-<header>
+# 🚀 Session 1: Introduction to Docker
 
-<!--
-  <<< Author notes: Course header >>>
-  Include a 1280×640 image, course title in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Add your open source license, GitHub uses MIT license.
--->
-
-# GitHub Pages
-
-_Create a site or blog from your GitHub repositories with GitHub Pages._
-
-</header>
-
-<!--
-  <<< Author notes: Step 1 >>>
-  Choose 3-5 steps for your course.
-  The first step is always the hardest, so pick something easy!
-  Link to docs.github.com for further explanations.
-  Encourage users to open new tabs for steps!
--->
-
-## Step 1: Enable GitHub Pages
-
-_Welcome to GitHub Pages and Jekyll :tada:!_
-
-The first step is to enable GitHub Pages on this [repository](https://docs.github.com/en/get-started/quickstart/github-glossary#repository). When you enable GitHub Pages on a repository, GitHub takes the content that's on the main branch and publishes a website based on its contents.
-
-### :keyboard: Activity: Enable GitHub Pages
-
-1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
-1. Under your repository name, click **Settings**.
-1. Click **Pages** in the **Code and automation** section.
-1. Ensure "Deploy from a branch" is selected from the **Source** drop-down menu, and then select `main` from the **Branch** drop-down menu.
-1. Click the **Save** button.
-1. Wait about _one minute_ then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
-   > Turning on GitHub Pages creates a deployment of your repository. GitHub Actions may take up to a minute to respond while waiting for the deployment. Future steps will be about 20 seconds; this step is slower.
-   > **Note**: In the **Pages** of **Settings**, the **Visit site** button will appear at the top. Click the button to see your GitHub Pages site.
-
-<footer>
-
-<!--
-  <<< Author notes: Footer >>>
-  Add a link to get support, GitHub status page, code of conduct, license link.
--->
+Welcome to **Session 1** of your **Docker Mastery Course**! 🎉 In this session, we’ll cover the basics:
+✅ What is Docker?
+✅ Why use Docker?
+✅ Key concepts: **Images, Containers, Volumes, Networks**
+✅ Installing Docker
 
 ---
 
-Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/github-pages) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
+## 📌 What is Docker?
+Docker is a **containerization platform** that lets you package applications and their dependencies into **lightweight, portable containers**. These containers ensure that your application **runs the same way** across different environments (your laptop, a server, or the cloud).
 
-&copy; 2023 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+Think of **containers** like lightweight **virtual machines**, but faster and more efficient.
 
-</footer>
+🔹 **Without Docker:** "It works on my machine" issues 😩  
+🔹 **With Docker:** Runs **anywhere** without compatibility problems 🎉  
+
+---
+
+## 📌 Why Use Docker?
+✅ **Portability** – Run applications **anywhere** (local, cloud, on-prem).  
+✅ **Speed** – Containers start in **milliseconds**, unlike VMs.  
+✅ **Consistency** – Works on all machines without "dependency hell."  
+✅ **Efficiency** – Uses fewer resources than virtual machines.  
+✅ **Microservices & CI/CD** – Ideal for modern, scalable applications.  
+
+---
+
+## 📌 Key Docker Concepts
+
+### 1️⃣ Images
+🔹 An **image** is a **blueprint** for a container (like an OS snapshot).  
+🔹 Example: `nginx`, `redis`, `python`, or your own custom app.  
+🔹 Images are **immutable** (never change once built).  
+
+### 2️⃣ Containers
+🔹 A **container** is a **running instance** of an image.  
+🔹 Example: Running `nginx` in a container serves a website.  
+🔹 Containers are **isolated** but can communicate if needed.  
+
+### 3️⃣ Volumes
+🔹 Containers are **ephemeral** (they disappear when stopped).  
+🔹 **Volumes** allow **data persistence** (e.g., storing a database).  
+
+### 4️⃣ Networks
+🔹 Containers **communicate** via networks.  
+🔹 Example: A web server container talks to a database container.  
+
+---
+
+## 📌 Installing Docker
+
+### 🔹 Install Docker on Your Machine
+👉 [Download Docker Desktop](https://www.docker.com/products/docker-desktop/) for Windows & macOS.  
+👉 Linux: Install via `apt` (Ubuntu) or `dnf` (CentOS).  
+
+After installation, verify with:
+```sh
+docker --version
+```
+
+---
+
+## 🏆 Hands-On Task: Run Your First Docker Container!
+
+### Step 1: Run a Hello World Container
+Open a terminal and run:
+```sh
+docker run hello-world
+```
+🔹 This **downloads the image** and runs a small test container.  
+🔹 If successful, you’ll see a message:  
+   *"Hello from Docker!"* 🎉  
+
+### Step 2: Run an Nginx Web Server
+Let’s run an **nginx web server** inside a container:
+```sh
+docker run -d -p 8080:80 nginx
+```
+🔹 **`-d`** → Runs in the background (**detached mode**).  
+🔹 **`-p 8080:80`** → Maps **port 80 inside the container** to **port 8080 on your machine**.  
+
+Now, open your browser and visit:  
+👉 `http://localhost:8080`  
+
+You should see the **nginx welcome page**! 🎉  
+
+---
+
+## ✅ Recap: What You Learned In this Session
+✔ What Docker is and why it’s useful  
+✔ Key concepts: **Images, Containers, Volumes, Networks**  
+✔ Installed Docker and ran your first containers 🎉  
+
+---
+
+## 📌 What's Next?
+we’ll **deep dive into Docker Images**, learn how to create custom images with **Dockerfiles**, and push them to Docker Hub! 🚀  
+
+Let me know once you’ve completed the hands-on tasks or if you have any questions! 😊
